@@ -21,6 +21,7 @@ printf "127.0.0.1 localhost\n::1 localhost\n127.0.1.1 $hostname.localdomain $hos
 cat /etc/hosts
 printf "\n\n"
 
+printf "Enter a root password\n"
 passwd
 printf "\n"
 
@@ -66,7 +67,7 @@ printf "\n"
 
 systemctl enable netctl-ifplugd@$nic
 
-read -p "Enter a username: " username
+read -p "\nEnter a username: " username
 useradd -m $username
 passwd $username
 echo "$username ALL=(ALL) ALL" >> /etc/sudoers
