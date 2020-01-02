@@ -66,6 +66,7 @@ cat /etc/netctl/inet
 printf "\n"
 
 systemctl enable netctl-ifplugd@$nic
+systemctl enable sshd
 
 read -p "\nEnter a username: " username
 useradd -m $username
