@@ -71,6 +71,8 @@ systemctl enable sshd
 read -p "\nEnter a username: " username
 useradd -m $username
 passwd $username
-echo "$username ALL=(ALL) ALL" >> /etc/sudoers
+printf "\nAdd '$username ALL=(ALL) ALL' in sudoers file without quotes and save the file\n"
+read -p "Press enter to continue..."
+EDITOR=nano visudo
 
 printf "\nInstall finished! You may now exit chroot and reboot!\n"
